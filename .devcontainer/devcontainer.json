@@ -1,0 +1,16 @@
+{
+	"name": "Alpine",
+	"workspaceFolder": "/workspace",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "app",
+	"settings": {},
+	"extensions": [
+		"vscjava.vscode-java-pack"
+	],
+	"forwardPorts": [],
+	//"postCreateCommand": "uname -a",
+	// "runArgs": [ "--init", "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+	"remoteUser": "vscode",
+	"remoteEnv": {
+	}
+}
