@@ -70,11 +70,11 @@ public class ChatCommands {
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.MOVEMENT_SPEED, 400, 10)), "vitesse");
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.CONFUSION, 400, 0)), "nausee");
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.DIG_SLOWDOWN, 400, 0)), "fatigue");
-        registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.LEVITATION, 200, 1)), "levitation", "fly");
+        registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.LEVITATION, 200, 1)), "levitation", "ibelieveicanfly");
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.LEVITATION, 400, 255)), "pastomber", "flotter");
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.HEALTH_BOOST, 400, 1), effect(MobEffects.REGENERATION, 400, 1)), "regen", "heal", "health");
-        registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.SATURATION, 200, 255)), "saturation", "feed");
-        registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.JUMP, 400, 2)), "jumpboost");
+        registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.SATURATION, 200, 255)), "repus", "bouffe");
+        registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.JUMP, 400, 2)), "jumpjump");
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.DIG_SPEED, 400, 2)), "hate", "diggydiggy");
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.BAD_OMEN, 400, 0)), "badomen", "pillager", "raid");
         registerCommand(() -> CommandHandlers.addPotionEffects(effect(MobEffects.FIRE_RESISTANCE, 800, 0), effect(MobEffects.DAMAGE_RESISTANCE, 800, 4)), "resistance");
@@ -84,27 +84,27 @@ public class ChatCommands {
         registerCommand(CommandHandlers::floorIsLava, "lave", "floorislava");
         registerCommand(CommandHandlers::placeWater, "eau");
         registerCommand(CommandHandlers::placeSponge, "eponge");
-        registerCommand(() -> CommandHandlers.deathTimer(60), "timer", "deathtimer");
-        registerCommand(() -> CommandHandlers.deathTimer(30), "peacetimer", "timeout");
-        registerCommand(CommandHandlers::drainHealth, "drain", "halfhealth");
+        registerCommand(() -> CommandHandlers.deathTimer(60), "timer60");
+        registerCommand(() -> CommandHandlers.deathTimer(30), "timer30");
+        registerCommand(CommandHandlers::drainHealth, "drain", "abobo");
         registerCommand(CommandHandlers::spawnAnvil, "enclume"); // Gaiet's favourite command <3
         registerCommand(() -> CommandHandlers.spawnMobBehind(EntityType.CREEPER.create(PlayerHelper.player().level)), "creeper");
         registerCommand(() -> CommandHandlers.spawnMobBehind(EntityType.ZOMBIE.create(PlayerHelper.player().level)), "zombie");
         registerCommand(() -> CommandHandlers.spawnMob(EntityType.ENDERMAN.create(PlayerHelper.player().level)), "enderman");
-        registerCommand(() -> CommandHandlers.spawnMobBehind(EntityType.WITCH.create(PlayerHelper.player().level)), "witch");
+        registerCommand(() -> CommandHandlers.spawnMobBehind(EntityType.WITCH.create(PlayerHelper.player().level)), "sorciere");
         registerCommand(() -> CommandHandlers.spawnMobBehind(EntityType.SKELETON.create(PlayerHelper.player().level)), "squelette");
         registerCommand(() -> CommandHandlers.spawnMobBehind(EntityType.SLIME.create(PlayerHelper.player().level)), "slime");
         registerCommand(CommandHandlers::spawnArmorStand, "armorstand", "armourstand", "boo");
-        registerCommand(() -> CommandHandlers.playSound(SoundEvents.CREEPER_PRIMED, SoundSource.HOSTILE, 1.0F, 1.0F), "creeperscare", "behindyou");
-        registerCommand(() -> CommandHandlers.playSound(SoundEvents.ZOMBIE_AMBIENT, SoundSource.HOSTILE, 1.0F, 1.0F), "zombiescare", "bruh");
-        registerCommand(() -> CommandHandlers.playSound(SoundEvents.SKELETON_AMBIENT, SoundSource.HOSTILE, 1.0F, 1.0F), "skeletonscare", "spook");
-        registerCommand(() -> CommandHandlers.playSound(SoundEvents.WITCH_AMBIENT, SoundSource.HOSTILE, 1.0F, 1.0F), "witchscare", "hehe");
+        registerCommand(() -> CommandHandlers.playSound(SoundEvents.CREEPER_PRIMED, SoundSource.HOSTILE, 1.0F, 1.0F), "pchhh", "behindyou");
+        registerCommand(() -> CommandHandlers.playSound(SoundEvents.ZOMBIE_AMBIENT, SoundSource.HOSTILE, 1.0F, 1.0F), "greuh", "bruh");
+        registerCommand(() -> CommandHandlers.playSound(SoundEvents.SKELETON_AMBIENT, SoundSource.HOSTILE, 1.0F, 1.0F), "bruitos", "spook");
+        registerCommand(() -> CommandHandlers.playSound(SoundEvents.WITCH_AMBIENT, SoundSource.HOSTILE, 1.0F, 1.0F), "hinhin", "hehe");
         registerCommand(() -> CommandHandlers.playSound(SoundEvents.GHAST_WARN, SoundSource.HOSTILE, 10.0F, 1.0F), "ghastscare", "yikes");
         registerCommand(() -> CommandHandlers.playSound(SoundEvents.PHANTOM_AMBIENT, SoundSource.HOSTILE, 10.0F, 1.0F), "phantomscare", "needsleep");
         registerCommand(() -> CommandHandlers.playSound(SoundEvents.WITHER_AMBIENT, SoundSource.HOSTILE, 10.0F, 1.0F), "witherscare", "wither");
         registerCommand(CommandHandlers::pigmanScare, "pigmanscare", "aggro");
         registerCommand(CommandHandlers::elderGuardianScare, "guardian", "guardianscare");
-        registerCommand(() -> CommandHandlers.playSound(SoundEvents.ANVIL_FALL, SoundSource.BLOCKS, 1.0F, 1.0F), "anvilscare");
+        registerCommand(() -> CommandHandlers.playSound(SoundEvents.ANVIL_FALL, SoundSource.BLOCKS, 1.0F, 1.0F), "bruitenclume");
         registerCommand(CommandHandlers::spawnLightning, "foudre");
         registerCommand(CommandHandlers::spawnFireball, "bouledefeu");
         registerCommand(() -> CommandHandlers.oresExplode = true, "oresexplode");
@@ -115,9 +115,11 @@ public class ChatCommands {
         registerCommand(CommandHandlers::dismount, "dismount", "getoff");
         registerCommand(CommandHandlers::dropItem, "drop", "throw");
         registerCommand(() -> PlayerHelper.player().getInventory().dropAll(), "dropall");
-        registerCommand(CommandHandlers::infestBlock, "silverfish");
+        registerCommand(CommandHandlers::infestBlock, "silverfish"); // crash when in water or sand
         registerCommand(CommandHandlers::setRainAndThunder, "pluie", "makeitrain");
         registerCommand(() -> CommandHandlers.setDifficulty(Difficulty.HARD), "hard", "hardmode");
+        registerCommand(() -> CommandHandlers.setDifficulty(Difficulty.EASY), "easy");
+        registerCommand(() -> CommandHandlers.setDifficulty(Difficulty.NORMAL), "normal");
         registerCommand(() -> CommandHandlers.setDifficulty(Difficulty.PEACEFUL), "peaceful", "peacefulmode");
         registerCommand(CommandHandlers::placeChest, "coffre", "lootbox");
         registerCommand(() -> CommandHandlers.setTime(1000), "jour", "setday");
@@ -131,7 +133,8 @@ public class ChatCommands {
         registerCommand(CommandHandlers::toggleCrouch, "togglecrouch", "crouch");
         registerCommand(CommandHandlers::toggleSprint, "togglesprint", "sprint");
         registerCommand(CommandHandlers::pumpkin, "pumpkin");
-        registerCommand(CommandHandlers::chorusTeleport, "chorusfruit", "chorus", "teleport");
+        registerCommand(CommandHandlers::chorusTeleport, "chorusfruit", "chorus");
+        registerCommand(CommandHandlers::realTeleport, "teleport");
         registerCommand(() -> CommandHandlers.changeDurability(false), "damage", "damageitem");
         registerCommand(() -> CommandHandlers.changeDurability(true), "repair", "repairitem");
 

@@ -61,7 +61,7 @@ public class BlacklistCommand implements Command<CommandSourceStack> {
 
     private int showMessage(CommandContext<CommandSourceStack> context) {
 
-        context.getSource().sendSuccess(new TranslatableComponent("gui.twitchmod.chat.blacklisted_commands", BlacklistSystem.getBlacklist().toString()), false);
+        context.getSource().sendSuccess(new TranslatableComponent("gui.twitchmod.blacklisted_commands", BlacklistSystem.getBlacklist().toString()), false);
         return SINGLE_SUCCESS;
 
     }

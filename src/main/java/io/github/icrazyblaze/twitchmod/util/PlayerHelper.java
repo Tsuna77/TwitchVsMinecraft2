@@ -13,7 +13,7 @@ public class PlayerHelper {
 
     public static MinecraftServer defaultServer = null;
     public static ForgeConfigSpec.ConfigValue<List<? extends String>> affectedPlayers = ConfigManager.PLAYERS_AFFECTED;
-    private static String username = null;
+    private static String username = "";
 
     /**
      * This method gets a reference to the player, using the username specified. If the player is not found, it will get the first player in the list.

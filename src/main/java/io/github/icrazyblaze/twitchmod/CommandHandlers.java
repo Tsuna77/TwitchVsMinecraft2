@@ -768,6 +768,36 @@ public class CommandHandlers {
 
     }
 
+    public static void realTeleport(){
+
+        ServerPlayer player = player();
+        Level world = player.level;
+
+        // Code taken from ChorusFruitItem in vanilla
+        if (!world.isClientSide()) {
+            double d0 = player.getX();
+            double d1 = player.getY();
+            double d2 = player.getZ();
+
+            for (int i = 0; i < 16; ++i) {
+                double d3 = player.getX() + (player.getRandom().nextDouble() - 0.5D) * 160.0D;
+                double d4 = Mth.clamp(player.getY() + (double) (player.getRandom().nextInt(160) - 8), 0.0D, world.getHeight() - 1);
+                double d5 = player.getZ() + (player.getRandom().nextDouble() - 0.5D) * 160.0D;
+                if (player.isPassenger()) {
+                    player.stopRiding();
+                }
+
+                if (player.randomTeleport(d3, d4, d5, true)) {
+                    SoundEvent soundevent = SoundEvents.CHORUS_FRUIT_TELEPORT;
+                    world.playSound(null, d0, d1, d2, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    player.playSound(soundevent, 1.0F, 1.0F);
+                    break;
+                }
+            }
+
+        }
+
+    }
     public static void chorusTeleport() {
 
         ServerPlayer player = player();

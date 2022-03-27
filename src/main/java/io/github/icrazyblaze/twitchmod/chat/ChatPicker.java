@@ -185,8 +185,11 @@ public class ChatPicker {
                     if (ConfigManager.SHOW_CHAT_MESSAGES.get()) {
                         CommandHandlers.broadcastMessage(new TranslatableComponent("gui.twitchmod.chat.command_chosen", BotConfig.getCommandPrefix() + message).withStyle(ChatFormatting.AQUA));
                     }
-                    BotCommon.sendBotMessage(I18n.get("gui.twitchmod.chat.command_chosen", BotConfig.getCommandPrefix() + message));
                 }
+                else{
+                    CommandHandlers.broadcastMessage(new TranslatableComponent("gui.twitchmod.chat.command_thanks", sender ));
+                }
+                BotCommon.sendBotMessage(I18n.get("gui.twitchmod.chat.command_chosen", BotConfig.getCommandPrefix() + message));
 
                 // Below will not be executed if the command does not run
                 lastCommand = message;
